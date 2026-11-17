@@ -18,7 +18,7 @@ class ListProductPage extends ConsumerWidget {
         title: Text('appbarTitle'),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () => context.go('/cart'),
             icon: Badge.count(
               child: Icon(Icons.shopping_cart_outlined),
               count: ref.watch(cartProvider).length,

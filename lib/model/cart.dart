@@ -9,6 +9,10 @@ class Cart extends _$Cart {
   List<Product> build() {
     return [];
   }
+
+  String get priceInEuros =>
+      "${state.fold<num>(0, (prv, actual) => prv + actual.price).toStringAsFixed(2)}€";
+
   void add(Product product) {
     state = [...state, product];
   }

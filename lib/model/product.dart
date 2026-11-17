@@ -5,6 +5,7 @@ class Product {
   final String category;
   final String image;
   final num price;
+  final num rate;
 
   //Constructeur avec les paramètres nommés "required"
   Product({
@@ -12,6 +13,7 @@ class Product {
     required this.title,
     required this.image,
     required this.price,
+    required this.rate,
     required this.category,
     required this.description,
   });
@@ -25,6 +27,7 @@ class Product {
       'category': this.category,
       'image': this.image,
       'price': this.price,
+      'rating': {'rate': rate},
     };
   }
 
@@ -36,6 +39,7 @@ class Product {
       category: map['category'] as String,
       image: map['image'] as String,
       price: map['price'] as num,
+      rate: map['rating']['rate'] as num,
     );
   }
 
@@ -48,9 +52,10 @@ class Product {
           description == other.description &&
           category == other.category &&
           image == other.image &&
-          price == other.price;
+          price == other.price &&
+          rate == other.rate;
 
   @override
   int get hashCode =>
-      Object.hash(id, title, description, category, image, price);
+      Object.hash(id, title, description, category, image, price, rate);
 }
