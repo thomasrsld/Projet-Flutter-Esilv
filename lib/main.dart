@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:provider/provider.dart';
 
 import 'app.dart';
@@ -6,8 +7,7 @@ import 'model/cart.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (BuildContext context) => Cart(),
+    ProviderScope(
       child: EsilvShop(),
     ),
   );
